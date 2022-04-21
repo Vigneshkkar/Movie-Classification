@@ -27,6 +27,18 @@ def get_movie_data(movie_name, pages=1):
     response = requests.get(build_url(movie_name, pages))
     return response.json()
 
+st.set_page_config(
+    page_title="Movie Classification",
+    page_icon="U+1F3AC",
+    # layout="wide",
+    # initial_sidebar_state="expanded",
+    # menu_items={
+    #     'Get Help': 'vigneshkkar@gmail.com',
+    #     'Report a bug': "vigneshkkar@gmail.com",
+    #     'About': "# This is a app to classify the movie Genere using the plot"
+    # }
+)
+
 st.title('Movie Classification')
 
 st.subheader('Enter Movie name to detect the Genre')
