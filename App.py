@@ -36,7 +36,7 @@ if st.button('Predict the Movie Genre'):
      for i in get_movie_data(title)["results"]:
         with st.expander(i['title']):
             predicted = loaded_model.predict(pad_sequences( tokenizer.texts_to_sequences([i['overview']]), maxlen = MAX_SEQUENCE_LENGTH))
-            fig = px.line_polar(r=predicted[0], theta=classes, line_close=True, start_angle=30)
+            fig = px.line_polar(r=predicted[0], theta=classes, line_close=True, start_angle=30,)
             fig.update_traces(fill='toself')
             st.plotly_chart(fig, use_container_width=True)
             st.header("Movie Name:")
